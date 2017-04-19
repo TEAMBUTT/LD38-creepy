@@ -1,4 +1,6 @@
-package.path = package.path .. ';vendor/?.lua'
+class = require 'vendor.middleclass'
+inspect = require 'vendor.inspect'
 
-class = require('middleclass')
-pprint = require('pprint')
+p = function(value)
+  print(inspect(value))
+end
