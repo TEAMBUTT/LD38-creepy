@@ -10,9 +10,9 @@ function Portion:addSystem(system)
   table.insert(self.systems, system)
 end
 
-function Portion:update(deltaTime)
+function Portion:processEvent(event)
   for index, system in ipairs(self.systems) do
-    system(self, deltaTime)
+    system(self, event)
   end
 end
 

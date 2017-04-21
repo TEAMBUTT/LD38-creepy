@@ -1,8 +1,9 @@
 require 'spec.spec_helper'
 
 local Portion = require "flimsy.portion"
+local Event = require "flimsy.event"
 
-describe("flimsy.Portion", function()
+describe("flimsy.portion", function()
   local portion
 
   before_each(function()
@@ -15,17 +16,19 @@ describe("flimsy.Portion", function()
   end)
 
   it("runs systems when it updates", function()
-    local actualDelta
     local actualPortion
+    local actualEvent
 
-    portion:addSystem(function(portion, deltaTime)
+    portion:addSystem(function(portion, event)
       actualPortion = portion
-      actualDelta = deltaTime
+      actualEvent = event
     end)
 
-    portion:update(22)
+    local event = Event:new("Kyle", 3)
+
+    portion:processEvent(event)
 
     assert.are.equal(portion, actualPortion)
-    assert.are.equal(22, actualDelta)
+    assert.are.equal(event, actualEvent)
   end)
 end)
