@@ -4,6 +4,10 @@ return function(portion)
       return
     end
 
-    p('advanced')
+    local updatables = portion:getComponents('Updatable')
+
+    _.each(updatables, function(index, updatable)
+    end)
+      p(#updatables)
   end
 end
