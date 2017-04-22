@@ -8,17 +8,27 @@ function Portion:initialize()
 end
 
 function Portion:addSystem(system)
-  table.insert(self.systems, system)
+  table.insert(self.systems, system(self))
 end
 
 function Portion:processEvent(event)
   for index, system in ipairs(self.systems) do
-    system(self, event)
+    system(event)
   end
 end
 
 function Portion:addEntity(entity)
   table.insert(self.entities, entity)
+end
+
+function Portion:getEntities(componentName)
+  if (not componentName) then
+    return self.entities
+  end
+
+  return _.select(self.entities, function(index, entity)
+    return entity:is(componentName)
+  end)
 end
 
 return Portion

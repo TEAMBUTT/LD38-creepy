@@ -6,6 +6,7 @@ local portions = {}
 local currentPortion
 
 function love.load()
+  love.graphics.setDefaultFilter('nearest', 'nearest', 0)
   portions.game = require 'portions.game'
   currentPortion = portions.game
 end

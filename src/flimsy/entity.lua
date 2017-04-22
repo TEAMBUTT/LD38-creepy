@@ -4,12 +4,8 @@ function Entity:initialize()
   self.components = {}
 end
 
-function Entity:getComponents()
-  return self.components
-end
-
-function Entity:addComponent(component)
-  self.components[component.name] = component
+function Entity:is(componentName)
+  return not not self.components[componentName]
 end
 
 return Entity
