@@ -8,15 +8,4 @@ describe("flimsy.entity", function()
   before_each(function()
     entity = Entity:new()
   end)
-
-  it("has components", function()
-    local component = function()
-    end
-
-    assert.are.same({}, entity:getComponents())
-
-    entity:addComponent(component)
-
-    assert.are.same({ component }, entity:getComponents())
-  end)
 end)
