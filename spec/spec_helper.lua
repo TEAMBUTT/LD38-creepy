@@ -1,3 +1,3 @@
-package.path = package.path .. ';src/?.lua;src/vendor/?.lua'
+package.path = package.path .. ';src/?.lua'
 
 require 'env'
