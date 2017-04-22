@@ -9,7 +9,7 @@ function Entity:getComponents()
 end
 
 function Entity:addComponent(component)
-  table.insert(self.components, component)
+  self.components[component.name] = component
 end
 
 return Entity

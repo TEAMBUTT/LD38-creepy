@@ -4,6 +4,7 @@ local Portion = class("Portion")
 
 function Portion:initialize()
   self.systems = {}
+  self.entities = {}
 end
 
 function Portion:addSystem(system)
@@ -14,6 +15,10 @@ function Portion:processEvent(event)
   for index, system in ipairs(self.systems) do
     system(self, event)
   end
+end
+
+function Portion:addEntity(entity)
+  table.insert(self.entities, entity)
 end
 
 return Portion
