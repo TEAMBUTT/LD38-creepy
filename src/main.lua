@@ -1,18 +1,17 @@
 require 'env'
 
-local Portion = require 'flimsy.portion'
 local Event = require 'flimsy.event'
 
 local portions = {}
 local currentPortion
 
 function love.load()
-  portions.game = Portion:new()
+  portions.game = require 'portions.game'
   currentPortion = portions.game
 end
 
 function love.draw()
-  love.graphics.print(_VERSION, 400, 300)
+  currentPortion:processEvent(Event:new('draw', nil))
 end
 
 function love.update(deltaTime)
