@@ -7,6 +7,7 @@ local currentPortion
 
 function love.load()
   love.graphics.setDefaultFilter('nearest', 'nearest', 0)
+  love.graphics.setBackgroundColor(53, 30, 84)
   portions.game = require 'portions.game'
   currentPortion = portions.game
 end
