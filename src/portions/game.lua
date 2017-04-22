@@ -7,6 +7,7 @@ local undead_rogue = require 'entities.undead_rogue'
 local game = Portion:new()
 
 game:addSystem(require 'systems.game_map')
+game:addSystem(require 'systems.game_controls')
 
 local mapWidth = 25
 local mapHeight = 14

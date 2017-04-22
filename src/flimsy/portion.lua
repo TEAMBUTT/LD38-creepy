@@ -22,7 +22,7 @@ function Portion:addEntity(entity)
 end
 
 function Portion:getEntities(componentName)
-  if (not componentName) then
+  if not componentName then
     return self.entities
   end
 

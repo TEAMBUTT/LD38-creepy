@@ -5,7 +5,7 @@ return function(portion)
   local cameraY = 0
 
   return function(event)
-    if (event.name ~= 'draw') then
+    if event.name ~= 'draw' then
       return
     end
 
