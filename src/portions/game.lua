@@ -8,6 +8,7 @@ local game = Portion:new()
 
 game:addSystem(require 'systems.game_map')
 game:addSystem(require 'systems.game_controls')
+game:addSystem(require 'systems.game_play')
 
 local mapWidth = 25
 local mapHeight = 14
