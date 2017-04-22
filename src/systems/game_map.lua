@@ -9,10 +9,10 @@ return function(portion)
       return
     end
 
-    local mappableEntities = portion:getEntities('Mappable')
+    local mappables = portion:getComponents('Mappable')
 
-    _.each(mappableEntities, function(index, entity)
-      sprites.add("player", 0, 0)
+    _.each(mappables, function(index, mappable)
+      sprites.add(mappable.sprite, mappable.x, mappable.y)
     end)
 
     love.graphics.scale(3, 3)

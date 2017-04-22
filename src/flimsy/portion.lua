@@ -31,4 +31,11 @@ function Portion:getEntities(componentName)
   end)
 end
 
+function Portion:getComponents(componentName)
+  local entities = self:getEntities(componentName)
+  return _.map(entities, function(index, entity)
+    return entity.components[componentName]
+  end)
+end
+
 return Portion

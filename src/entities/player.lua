@@ -2,12 +2,12 @@ local Entity = require 'flimsy.entity'
 
 local Mappable = require 'components.mappable'
 
-return function()
+return function(x, y)
   local player = Entity:new()
 
   Mappable:new(player, {
-    x = 0,
-    y = 0,
+    x = x,
+    y = y,
     sprite = 'player'
   })
 

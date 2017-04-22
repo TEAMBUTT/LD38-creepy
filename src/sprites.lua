@@ -26,8 +26,14 @@ end
 
 local sprites = {}
 
+-- Offsets here are to add a 1px border between tiles and also edge of the
+-- screen.
 function sprites.add(name, x, y)
-  spriteBatch:add(quads[name], x, y)
+  spriteBatch:add(
+    quads[name],
+    x * SPRITE_WIDTH + x + 1,
+    y * SPRITE_HEIGHT + y + 1
+  )
 end
 
 function sprites.draw()
