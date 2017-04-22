@@ -15,7 +15,8 @@ function newQuad(x, y)
 end
 
 local quads = {
-  player = newQuad(0, 0)
+  player = newQuad(0, 0),
+  wall   = newQuad(1, 0)
 }
 
 local spriteBatch = love.graphics.newSpriteBatch(textureAtlas)
